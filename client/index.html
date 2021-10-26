@@ -8,12 +8,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
 </head>
 <body>
-   zzz 
-   <script>
-       document.addEventListener('DOMContentLoaded', () => {
-           const socket = io("ws://localhost:8888/foo", {"path": "/io"})
-           console.log(socket)
-       })
-   </script>
+    <pre id="content"></pre>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io("ws://localhost:8888/foo", {"path": "/io"})
+            console.log(socket)
+            socket.on('connect', () => {
+                document.getElementById('content').innerHTML = JSON.stringify({
+                    id: socket.id,
+                    connected: socket.connected
+                })
+            })
+        })
+    </script>
 </body>
 </html>
