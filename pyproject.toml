@@ -6,8 +6,8 @@ authors = ["Mech <mechsix@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-python-socketio = "^5.4.1"
-tornado = "^6.1"
+python-socketio = "4.3.1"
+tornado = "6.0.3"
 
 [tool.poetry.dev-dependencies]
 
